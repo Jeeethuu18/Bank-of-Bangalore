@@ -1,4 +1,4 @@
-# 🏦 Bank of Bangalore
+# Bank of Bangalore
 
 > A full-stack digital banking application built with Flask, SQLite, SQLAlchemy, and a custom JSON-over-TCP transaction service.
 
@@ -8,9 +8,9 @@ The application combines a Flask web application with a custom TCP banking servi
 
 ---
 
-## ✨ Features
+## Features
 
-### 👤 Customer Portal
+### Customer Portal
 
 - Customer registration with validation.
 - Login and logout using Flask-Login.
@@ -38,7 +38,7 @@ The application combines a Flask web application with a custom TCP banking servi
 - Security and transfer notifications.
 - Login, logout, transfer, and security audit events.
 
-### 🛡️ Admin / Banker Portal
+### Admin / Banker Portal
 
 - Admin dashboard with banking metrics.
 - Customer search and account-status filtering.
@@ -79,7 +79,7 @@ The application combines a Flask web application with a custom TCP banking servi
 - Strong Flask-Login session protection.
 - Audit logging of important security and administrative actions.
 
-### 🌐 Custom TCP Banking Service
+### Custom TCP Banking Service
 
 The project contains a separate TCP server using Python sockets and newline-delimited JSON.
 
@@ -100,7 +100,7 @@ Transfers use an atomic SQL update that checks the sender's available balance as
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
                          ┌─────────────────────────┐
@@ -145,7 +145,7 @@ When the application is started directly, the TCP server is launched in a backgr
 
 ---
 
-## 🧰 Technology Stack
+## Technology Stack
 
 ### Backend
 
@@ -164,12 +164,11 @@ When the application is started directly, the TCP server is launched in a backgr
 
 ### Frontend
 
-- Jinja2 templates
 - HTML5
 - Tailwind CSS via CDN
 - Custom CSS
 - Vanilla JavaScript
-- Google Fonts / Inter
+- Google Fonts
 
 ### Networking
 
@@ -328,7 +327,7 @@ Stores audit events such as:
 
 ---
 
-## 🔄 Main Workflows
+## Main Workflows
 
 ### Customer registration
 
@@ -514,7 +513,7 @@ The seed script currently contains demonstration credentials for local developme
 
 ---
 
-## 👤 Demo Accounts
+## Demo Accounts
 
 The seed script creates the administrator account:
 
@@ -530,7 +529,7 @@ Because these credentials are embedded in the seed implementation, they are inte
 
 ---
 
-## 🌐 Web Routes
+## Web Routes
 
 ### Authentication
 
@@ -589,7 +588,7 @@ Because these credentials are embedded in the seed implementation, they are inte
 
 ---
 
-## 🔌 TCP Protocol
+## TCP Protocol
 
 The TCP service uses newline-delimited JSON.
 
@@ -632,7 +631,7 @@ The TCP client automatically connects to `127.0.0.1` when the configured TCP hos
 
 ---
 
-## 🧪 Concurrency Testing
+## Concurrency Testing
 
 The repository includes `concurrency_test.py` to exercise simultaneous transfers against the TCP transaction service.
 
@@ -659,7 +658,7 @@ The test includes scenarios with:
 
 ---
 
-## 📄 Statements & PDF Generation
+## Statements & PDF Generation
 
 The application uses ReportLab to generate:
 
@@ -672,7 +671,7 @@ Customer statements are limited to the latest 10 transactions in the mini-statem
 
 ---
 
-## 🎨 User Interface
+## User Interface
 
 The UI is built with Jinja2 templates and Tailwind CSS loaded through the Tailwind CDN.
 
@@ -688,7 +687,7 @@ The admin interface provides a separate administration navigation and dashboards
 
 ---
 
-## 🔒 Security Notes
+## Security Notes
 
 This project is a banking-system simulation and should **not** be treated as production banking software without substantial additional security and infrastructure work.
 
@@ -714,7 +713,7 @@ Important considerations before production deployment include:
 
 ---
 
-## ⚠️ Project Limitations
+## Project Limitations
 
 The current implementation is designed as an educational/demo banking platform.
 
@@ -733,7 +732,7 @@ Some implementation characteristics to be aware of:
 
 ---
 
-## 🛠️ Development
+## Development
 
 Useful files when extending the project:
 
@@ -755,7 +754,7 @@ Useful files when extending the project:
 
 ---
 
-## 📊 Core Domain Entities
+## Core Domain Entities
 
 ```text
 User
