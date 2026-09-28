@@ -62,7 +62,7 @@ The application combines a Flask web application with a custom TCP banking servi
 - Admin profile settings.
 - Broadcast announcements to customers.
 
-### 🔐 Authentication & Security
+### Authentication & Security
 
 - Flask-Login session authentication.
 - Werkzeug password hashing.
@@ -178,7 +178,7 @@ When the application is started directly, the TCP server is launched in a backgr
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 bank-of-bangalore/
@@ -252,7 +252,7 @@ bank-of-bangalore/
 
 ---
 
-## 🗃️ Data Model
+## Data Model
 
 The application currently defines the following SQLAlchemy models:
 
@@ -687,91 +687,6 @@ The admin interface provides a separate administration navigation and dashboards
 
 ---
 
-## Security Notes
 
-This project is a banking-system simulation and should **not** be treated as production banking software without substantial additional security and infrastructure work.
 
-Important considerations before production deployment include:
-
-- Replace the development `SECRET_KEY`.
-- Remove hard-coded demonstration credentials.
-- Use HTTPS/TLS.
-- Protect or replace the raw TCP service with authenticated and encrypted transport.
-- Use a production-grade database such as PostgreSQL.
-- Use `Decimal`/fixed-precision monetary arithmetic rather than floating-point balances.
-- Add stronger authorization and ownership checks around every financial operation.
-- Add database migrations.
-- Add automated unit/integration/security tests.
-- Add rate limiting and abuse protection.
-- Add structured security monitoring.
-- Protect sensitive logs and avoid storing unnecessary personal information.
-- Review CSRF protection for every state-changing browser workflow.
-- Add transaction idempotency and stronger transaction identifiers.
-- Use proper database-level constraints and transactional guarantees.
-- Run behind a production WSGI server/reverse proxy rather than Flask's development server.
-- Store secrets outside source control.
-
----
-
-## Project Limitations
-
-The current implementation is designed as an educational/demo banking platform.
-
-Some implementation characteristics to be aware of:
-
-- SQLite is used as the primary database.
-- Monetary balances are represented using Python/SQLAlchemy `Float`.
-- The TCP service uses plain JSON over TCP rather than TLS.
-- The development configuration contains a fallback secret key.
-- Seed data contains demo credentials.
-- Database schema creation uses `db.create_all()` rather than a migration framework.
-- The application runs Flask's development server when launched directly.
-- The TCP server is started as a daemon thread by the Flask application.
-- Some reports calculate metrics in application code and may become expensive as data grows.
-- There is no external payment gateway or real banking network integration.
-
----
-
-## Development
-
-Useful files when extending the project:
-
-| File | Responsibility |
-|---|---|
-| `app.py` | Flask application factory and startup |
-| `config.py` | Application configuration |
-| `models.py` | SQLAlchemy models |
-| `seed.py` | Development/demo data generation |
-| `routes/auth.py` | Authentication workflows |
-| `routes/customer.py` | Customer workflows |
-| `routes/admin.py` | Admin workflows |
-| `tcp_server.py` | Banking TCP server |
-| `tcp_client.py` | Flask-to-TCP communication |
-| `concurrency_test.py` | Concurrent transfer testing |
-| `templates/` | Jinja2 UI |
-| `static/css/custom.css` | Custom styling |
-| `static/js/main.js` | Frontend behavior |
-
----
-
-## Core Domain Entities
-
-```text
-User
- │
- ├── 1 ─── 1 Account
- │
- ├── 1 ─── N Beneficiary
- │
- ├── 1 ─── N Notification
- │
- └── 1 ─── N Log
-
-Account
- │
- └── participates in Transactions
-       ├── sender_account
-       └── receiver_account
-```
-
----
+       
